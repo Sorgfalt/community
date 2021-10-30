@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>CommunityUpdateBoard</title>
+</head>
+<body>
+  <form th:action="@{'/post/edit/' + ${boardDto.id}}" method="post">
+	<input type="hidden" name="_method" value="put">
+  </form>
+</body>
+</html>
