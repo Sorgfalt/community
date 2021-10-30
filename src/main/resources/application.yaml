@@ -1,4 +1,10 @@
 spring:
+  mvc:
+    view:
+      suffix: .html
+    hiddenmethod:
+      filter:
+        enabled: true
   datasource:
     hikari:
       validation-timeout: '10000'

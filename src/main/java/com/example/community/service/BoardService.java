@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 import javax.transaction.Transactional;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 
 @Service
@@ -34,10 +35,31 @@ public class BoardService {
 					.title(board.getTitle())
 					.content(board.getContent())
 					.writer(board.getWriter())
+					.createdDate(board.getCreatedDate())
 					.build();
 			boardDtoList.add(boardDto);
 		}
 
 		return  boardDtoList;
+	}
+
+	@Transactional
+	public BoardDto getPost(Long id){
+		Optional<Board> boardEntityWrapper = boardRepository.findById(id);
+		Board board = boardEntityWrapper.get();
+
+		BoardDto boardDto = BoardDto.builder()
+				.id(board.getId())
+				.title(board.getTitle())
+				.content(board.getContent())
+				.writer(board.getWriter())
+				.createdDate(board.getCreatedDate())
+				.build();
+			return boardDto;
+	}
+
+	@Transactional
+	public void deletePost(Long id){
+		boardRepository.deleteById(id);
 	}
 }

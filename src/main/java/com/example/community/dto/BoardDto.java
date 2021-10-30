@@ -1,13 +1,21 @@
 package com.example.community.dto;
 
 import com.example.community.domain.entity.Board;
-import lombok.Builder;
+import lombok.*;
 
+import java.time.LocalDateTime;
+
+@Getter
+@Setter
+@ToString
+@NoArgsConstructor
 public class BoardDto {
-	private final Long id;
-	private final String writer;
-	private final String title;
-	private final String content;
+	private Long id;
+	private String writer;
+	private String title;
+	private String content;
+	private LocalDateTime createdDate;
+	private LocalDateTime modifiedDate;
 
 	public Board toEntity(){
 		return Board.builder()
@@ -19,10 +27,12 @@ public class BoardDto {
 	}
 
 	@Builder
-	public BoardDto(Long id, String title, String content, String writer) {
+	public BoardDto(Long id, String title, String content, String writer, LocalDateTime createdDate, LocalDateTime modifiedDate) {
 		this.id = id;
 		this.writer = writer;
 		this.title = title;
 		this.content = content;
+		this.createdDate = createdDate;
+		this.modifiedDate = modifiedDate;
 	}
 }
