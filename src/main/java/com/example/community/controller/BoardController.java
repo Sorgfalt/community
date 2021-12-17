@@ -2,13 +2,14 @@ package com.example.community.controller;
 
 import com.example.community.dto.BoardDto;
 import com.example.community.service.BoardService;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-
+@Slf4j
 @Controller
 public class BoardController {
 	private BoardService boardService;
@@ -28,6 +29,7 @@ public class BoardController {
 
 	@GetMapping("/post")
 	public String write(){
+
 		return "board/createBoard";
 	}
 
@@ -35,7 +37,7 @@ public class BoardController {
 	public String write(BoardDto boardDto){
 		boardService.savePost(boardDto);
 
-		return "board/list";
+		return "redirect:/main";
 	}
 
 	@GetMapping("/post/{no}")
@@ -51,7 +53,7 @@ public class BoardController {
 		BoardDto boardDto = boardService.getPost(no);
 
 		model.addAttribute("boardDto", boardDto);
-		return "/board/updateBoard";
+		return "board/updateBoard";
 	}
 
 	@PutMapping("/post/edit/{no}")
@@ -67,4 +69,5 @@ public class BoardController {
 
 		return "redirect:/main";
 	}
+
 }

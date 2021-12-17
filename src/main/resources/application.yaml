@@ -23,10 +23,10 @@ spring:
     username: root
     url: jdbc:mysql://localhost:3306/springBoard?serverTimezone=UTC&characterEncoding=UTF-8&autoReconnect=true&useSSL=true&failOverReadOnly=false&zeroDateTimeBehavior=convertToNull
   jpa:
-    generate-ddl: 'true'
+    generate-ddl: 'false'
     show-sql: 'true'
     hibernate:
-      ddl-auto: update
+      ddl-auto: none
     open-in-view: 'false'
     database-platform: org.hibernate.dialect.MySQL8Dialect
     properties:

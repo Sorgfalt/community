@@ -1,1 +1,1 @@
-console.log(boardDto);
+console.log(boardDto)
