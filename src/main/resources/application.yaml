@@ -5,6 +5,16 @@ spring:
     hiddenmethod:
       filter:
         enabled: true
+  devtools:
+    livereload:
+      enabled: false
+    restart:
+      enabled: true
+  thymeleaf:
+    cache: false
+  freemarker:
+    cache: false
+
   datasource:
     hikari:
       validation-timeout: '10000'
@@ -26,7 +36,7 @@ spring:
     generate-ddl: 'false'
     show-sql: 'true'
     hibernate:
-      ddl-auto: none
+      ddl-auto: update
     open-in-view: 'false'
     database-platform: org.hibernate.dialect.MySQL8Dialect
     properties:

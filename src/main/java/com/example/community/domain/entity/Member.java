@@ -8,19 +8,19 @@ import javax.persistence.*;
 @Getter
 @Setter
 @Entity
-@Table(name = "member")
+@Table(name="member")
 public class Member {
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Long id;
 
-  @Column(nullable = false)
+  @Column(nullable = false, name = "regId")
   private String regId;
 
-  @Column(nullable = false)
+  @Column(nullable = false, name = "password")
   private String password;
 
-  @Column(nullable = false)
+  @Column(nullable = false, name = "userName")
   private String userName;
 
   @Builder

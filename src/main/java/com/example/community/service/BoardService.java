@@ -39,7 +39,6 @@ public class BoardService {
 					.build();
 			boardDtoList.add(boardDto);
 		}
-
 		return  boardDtoList;
 	}
 
