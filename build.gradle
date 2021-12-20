@@ -31,7 +31,7 @@ dependencies {
     implementation 'org.apache.tomcat.embed:tomcat-embed-jasper'
     implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
     implementation 'com.github.gavlyukovskiy:p6spy-spring-boot-starter:1.5.7'
-
+    compileOnly 'org.springframework.boot:spring-boot-starter-oauth2-client'
     runtimeOnly 'mysql:mysql-connector-java'
     implementation group: 'org.javassist', name: 'javassist', version: '3.15.0-GA'
 }

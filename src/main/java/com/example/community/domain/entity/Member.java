@@ -1,8 +1,16 @@
 package com.example.community.domain.entity;
 
-import lombok.*;
-
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+import lombok.AccessLevel;
+import lombok.Builder;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Getter
@@ -23,11 +31,34 @@ public class Member {
   @Column(nullable = false, name = "userName")
   private String userName;
 
+  @Column(nullable = false, name = "email")
+  private String email;
+
+  @Column(name = "picture")
+  private String picture;
+
+  @Column(nullable = false, name = "role")
+  private Role role;
+
   @Builder
-  public Member(Long id, String regId, String password, String userName) {
+  public Member(Long id, String regId, String password, String userName, String email, String picture, Role role) {
     this.id = id;
     this.regId = regId;
     this.password = password;
     this.userName = userName;
+    this.email = email;
+    this.picture = picture;
+    this.role = role;
+  }
+
+  public Member update(String userName, String picture){
+    this.userName = userName;
+    this.picture = picture;
+
+    return this;
+  }
+
+  public String getRoleKey(){
+    return this.role.getKey();
   }
 }
