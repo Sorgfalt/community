@@ -15,3 +15,6 @@ selenium-debug.log
 *.ntvs*
 *.njsproj
 *.sln
+
+#OAuth2.0
+/src/main/resources/application-oauth.yml
