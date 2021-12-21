@@ -1,5 +1,4 @@
 .DS_Store
-node_modules/
 /dist/
 npm-debug.log*
 yarn-debug.log*
@@ -14,7 +13,13 @@ selenium-debug.log
 *.suo
 *.ntvs*
 *.njsproj
-*.sln
+*.sln¡
 
-#OAuth2.0
+# OAuth2.0
 application-oauth.yaml
+
+# Build
+node_modules
+.gradle
+build
+out
