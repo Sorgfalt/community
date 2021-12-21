@@ -2,10 +2,9 @@ package com.example.community.service;
 
 import com.example.community.dto.MemberDto;
 import com.example.community.repository.MemberRepository;
+import javax.transaction.Transactional;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
-
-import javax.transaction.Transactional;
 
 @Slf4j
 @Service

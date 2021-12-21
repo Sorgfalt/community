@@ -3,12 +3,12 @@ package com.example.community.service;
 import com.example.community.domain.entity.Board;
 import com.example.community.dto.BoardDto;
 import com.example.community.repository.BoardRepository;
-import lombok.extern.slf4j.Slf4j;
-import org.springframework.stereotype.Service;
-import javax.transaction.Transactional;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
+import javax.transaction.Transactional;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.stereotype.Service;
 
 @Slf4j
 @Service

@@ -22,22 +22,22 @@ public class Member {
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Long id;
 
-  @Column(nullable = false, name = "regId")
+  @Column(nullable = false, name = "regId", columnDefinition = "varchar(20)")
   private String regId;
 
-  @Column(nullable = false, name = "password")
+  @Column(nullable = false, name = "password", columnDefinition = "varchar(20)")
   private String password;
 
-  @Column(nullable = false, name = "userName")
+  @Column(nullable = false, name = "userName", columnDefinition = "varchar(20)")
   private String userName;
 
-  @Column(nullable = false, name = "email")
+  @Column(nullable = false, name = "email", columnDefinition = "varchar(50)")
   private String email;
 
   @Column(name = "picture")
   private String picture;
 
-  @Column(nullable = false, name = "role")
+  @Column(nullable = false, name = "role", columnDefinition = "varchar(30)")
   private Role role;
 
   @Builder

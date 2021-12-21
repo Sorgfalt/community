@@ -1,7 +1,12 @@
 package com.example.community.dto;
 
 import com.example.community.domain.entity.Member;
-import lombok.*;
+import com.example.community.domain.entity.Role;
+import lombok.Builder;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
 
 @Getter
 @Setter
@@ -14,7 +19,7 @@ public class MemberDto {
   private String userName;
   private String email;
   private String picture;
-  private com.example.community.domain.entity.Role role;
+  private Role role;
 
   public Member toJoinMember(){
     return Member.builder()
@@ -29,7 +34,7 @@ public class MemberDto {
   }
 
   @Builder
-  public MemberDto(Long id, String regId, String password, String userName, String email, String picture, com.example.community.domain.entity.Role role) {
+  public MemberDto(Long id, String regId, String password, String userName, String email, String picture, Role role) {
     this.id = id;
     this.regId = regId;
     this.password = password;
