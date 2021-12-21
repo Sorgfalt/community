@@ -17,4 +17,4 @@ selenium-debug.log
 *.sln
 
 #OAuth2.0
-/src/main/resources/application-oauth.yml
+application-oauth.yaml
