@@ -22,14 +22,8 @@ public class Member {
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Long id;
 
-  @Column(nullable = false, name = "regId", columnDefinition = "varchar(20)")
-  private String regId;
-
-  @Column(nullable = false, name = "password", columnDefinition = "varchar(20)")
-  private String password;
-
-  @Column(nullable = false, name = "userName", columnDefinition = "varchar(20)")
-  private String userName;
+  @Column(nullable = false, name = "name", columnDefinition = "varchar(20)")
+  private String name;
 
   @Column(nullable = false, name = "email", columnDefinition = "varchar(50)")
   private String email;
@@ -41,24 +35,22 @@ public class Member {
   private Role role;
 
   @Builder
-  public Member(Long id, String regId, String password, String userName, String email, String picture, Role role) {
+  public Member(Long id, String name, String email, String picture, Role role) {
     this.id = id;
-    this.regId = regId;
-    this.password = password;
-    this.userName = userName;
+    this.name = name;
     this.email = email;
     this.picture = picture;
     this.role = role;
   }
 
-  public Member update(String userName, String picture){
-    this.userName = userName;
+  public Member update(String name, String picture){
+    this.name = name;
     this.picture = picture;
 
     return this;
   }
 
-  public String getRoleKey(){
+  public static String getRoleKey(){
     return this.role.getKey();
   }
 }

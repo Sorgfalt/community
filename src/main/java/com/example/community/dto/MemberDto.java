@@ -14,9 +14,7 @@ import lombok.ToString;
 @NoArgsConstructor
 public class MemberDto {
   private Long id;
-  private String regId;
-  private String password;
-  private String userName;
+  private String name;
   private String email;
   private String picture;
   private Role role;
@@ -24,9 +22,7 @@ public class MemberDto {
   public Member toJoinMember(){
     return Member.builder()
       .id(id)
-      .regId(regId)
-      .password(password)
-      .userName(userName)
+      .name(name)
       .email(email)
       .picture(picture)
       .role(role)
@@ -34,11 +30,9 @@ public class MemberDto {
   }
 
   @Builder
-  public MemberDto(Long id, String regId, String password, String userName, String email, String picture, Role role) {
+  public MemberDto(Long id, String name, String email, String picture, Role role) {
     this.id = id;
-    this.regId = regId;
-    this.password = password;
-    this.userName = userName;
+    this.name = name;
     this.email = email;
     this.picture = picture;
     this.role = role;
