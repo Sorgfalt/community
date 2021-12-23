@@ -50,7 +50,7 @@ public class Member {
     return this;
   }
 
-  public static String getRoleKey(){
+  public String getRoleKey(){
     return this.role.getKey();
   }
 }

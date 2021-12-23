@@ -8,7 +8,8 @@
 	</head>
 	<body>
 		<!--Header-->
-		<div th:insert="common/header.html" id="header"></div>
+    {{>common/header}}
+<!--		<div th:insert="common/header.mustache" id="header"></div>-->
 
 		<a th:href="@{/post}">글쓰기</a>
 

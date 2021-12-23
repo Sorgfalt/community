@@ -1,8 +1,11 @@
 package com.example.community.controller;
 
+import com.example.community.config.auth.dto.SessionUser;
 import com.example.community.dto.BoardDto;
 import com.example.community.service.BoardService;
 import java.util.List;
+import javax.servlet.http.HttpSession;
+import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -13,20 +16,29 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+
 @Slf4j
+@RequiredArgsConstructor
 @Controller
 public class BoardController {
 	private BoardService boardService;
+  private final HttpSession httpSession;
 
 	@Autowired
 	public void BoardService(BoardService boardService) {
 		this.boardService = boardService;
 	}
 
-	@RequestMapping("/main")
+	@GetMapping("/main")
 	public String list(Model model){
 		List<BoardDto> boardDtoList = boardService.getBoardList();
 		model.addAttribute("boardList",boardDtoList);
+
+    SessionUser user = (SessionUser) httpSession.getAttribute("user");
+
+    if (user != null){
+      model.addAttribute("userName", user.getName());
+    }
 
 		return "board/list";
 	}

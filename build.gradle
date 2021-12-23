@@ -26,13 +26,15 @@ dependencies {
     compileOnly 'org.projectlombok:lombok'
     annotationProcessor 'org.projectlombok:lombok'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
-    implementation 'mysql:mysql-connector-java'
+    implementation 'mysql:mysql-connector-java:8.0.26'
     implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
     implementation 'org.apache.tomcat.embed:tomcat-embed-jasper'
     implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
-    implementation 'com.github.gavlyukovskiy:p6spy-spring-boot-starter:1.5.7'
+    implementation 'com.github.gavlyukovskiy:p6spy-spring-boot-starter:1.8.0'
     compileOnly 'org.springframework.boot:spring-boot-starter-oauth2-client'
-    runtimeOnly 'mysql:mysql-connector-java'
+    compileOnly 'org.springframework.boot:spring-boot-starter-mustache'
+    compileOnly 'mysql:mysql-connector-java:8.0.26'
+    runtimeOnly 'mysql:mysql-connector-java:8.0.26'
     implementation group: 'org.javassist', name: 'javassist', version: '3.15.0-GA'
 }
 
