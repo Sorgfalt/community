@@ -1,5 +1,7 @@
 package com.example.community.config.auth;
 
+import com.example.community.config.auth.dto.OAuthAttributes;
+import com.example.community.config.auth.dto.SessionUser;
 import com.example.community.domain.entity.Member;
 import com.example.community.repository.MemberRepository;
 import java.util.Collections;
@@ -30,14 +32,13 @@ public class CustomOAuth2UserService implements OAuth2UserService<OAuth2UserRequ
     String userNameAttributeName = userRequest.getClientRegistration()
       .getProviderDetails().getUserInfoEndpoint().getUserNameAttributeName();
 
-    OAuthAttributes attributes = OAuthAttributes.
-        of(registrationId, userNameAttributeName, OAuth2User.attributes());
+    OAuthAttributes attributes = OAuthAttributes.of(registrationId, userNameAttributeName, oAuth2User.getAttributes());
 
     Member member = saveOrUpdate(attributes);
     httpSession.setAttribute("user", new SessionUser(member));
 
     return new DefaultOAuth2User(
-      Collections.singleton(new SimpleGrantedAuthority(Member.getRoleKey())),
+      Collections.singleton(new SimpleGrantedAuthority(member.getRoleKey())),
       attributes.getAttributes(),
       attributes.getNameAttributeKey());
 
