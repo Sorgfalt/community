@@ -15,7 +15,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
 
 @Slf4j
 @RequiredArgsConstructor
@@ -29,15 +28,15 @@ public class BoardController {
 		this.boardService = boardService;
 	}
 
-	@GetMapping("/main")
+	@GetMapping("/")
 	public String list(Model model){
 		List<BoardDto> boardDtoList = boardService.getBoardList();
 		model.addAttribute("boardList",boardDtoList);
 
-    SessionUser user = (SessionUser) httpSession.getAttribute("user");
+    SessionUser member = (SessionUser) httpSession.getAttribute("member");
 
-    if (user != null){
-      model.addAttribute("userName", user.getName());
+    if (member != null){
+      model.addAttribute("userName", member.getName());
     }
 
 		return "board/list";
@@ -53,7 +52,7 @@ public class BoardController {
 	public String write(BoardDto boardDto){
 		boardService.savePost(boardDto);
 
-		return "redirect:/main";
+		return "redirect:/";
 	}
 
 	@GetMapping("/post/{no}")
@@ -76,14 +75,14 @@ public class BoardController {
 	public String update(BoardDto boardDto) {
 		boardService.savePost(boardDto);
 
-		return "redirect:/main";
+		return "redirect:/";
 	}
 
 	@DeleteMapping("post/{no}")
 	public String delete(@PathVariable("no") Long no) {
 		boardService.deletePost(no);
 
-		return "redirect:/main";
+		return "redirect:/";
 	}
 
 }
