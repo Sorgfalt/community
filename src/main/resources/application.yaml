@@ -35,18 +35,21 @@ spring:
     username: root
     url: jdbc:mysql://localhost:3306/springBoard?serverTimezone=UTC&characterEncoding=UTF-8&autoReconnect=true&useSSL=true&failOverReadOnly=false&zeroDateTimeBehavior=convertToNull
   jpa:
-    generate-ddl: 'true'
-    show-sql: 'true'
+    generate-ddl: true
+    show-sql: true
     hibernate:
       ddl-auto: update
-    open-in-view: 'false'
+    open-in-view: false
     database-platform: org.hibernate.dialect.MySQL8Dialect
     properties:
       hibernate:
-        format_sql: 'true'
+        format_sql: true
+    database: mysql
   output:
     ansi:
       enabled: always
+  main:
+    allow-bean-definition-overriding: true
 logging:
   level:
     org:
