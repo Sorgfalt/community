@@ -1,6 +1,6 @@
-package com.example.community.dto;
+package com.example.community.dto.board;
 
-import com.example.community.domain.entity.Board;
+import com.example.community.domain.entity.board.Board;
 import java.time.LocalDateTime;
 import lombok.Builder;
 import lombok.Getter;

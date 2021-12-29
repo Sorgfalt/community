@@ -1,4 +1,4 @@
-package com.example.community.domain.entity;
+package com.example.community.domain.entity.member;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;

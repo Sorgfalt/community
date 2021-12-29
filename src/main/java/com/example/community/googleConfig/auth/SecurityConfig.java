@@ -1,6 +1,6 @@
-package com.example.community.config.auth;
+package com.example.community.googleConfig.auth;
 
-import com.example.community.domain.entity.Role;
+import com.example.community.domain.entity.member.Role;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;

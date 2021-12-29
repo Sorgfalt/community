@@ -1,8 +1,8 @@
 package com.example.community.controller;
 
-import com.example.community.config.auth.dto.SessionUser;
-import com.example.community.dto.BoardDto;
-import com.example.community.service.BoardService;
+import com.example.community.googleConfig.auth.dto.SessionUser;
+import com.example.community.dto.board.BoardDto;
+import com.example.community.service.board.BoardService;
 import java.util.List;
 import javax.servlet.http.HttpSession;
 import lombok.RequiredArgsConstructor;

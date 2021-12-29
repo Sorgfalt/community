@@ -1,6 +1,6 @@
-package com.example.community.config.auth.dto;
+package com.example.community.googleConfig.auth.dto;
 
-import com.example.community.domain.entity.Member;
+import com.example.community.domain.entity.member.Member;
 import java.io.Serializable;
 import lombok.Getter;
 

@@ -1,5 +1,6 @@
-package com.example.community.domain.entity;
+package com.example.community.domain.entity.board;
 
+import com.example.community.domain.entity.TimeEntity;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -17,7 +18,7 @@ import lombok.Setter;
 @Setter
 @Entity
 @Table(name="board")
-public class Board extends TimeEntity{
+public class Board extends TimeEntity {
 	@Id
 	@GeneratedValue(strategy= GenerationType.IDENTITY)
 	private Long id;

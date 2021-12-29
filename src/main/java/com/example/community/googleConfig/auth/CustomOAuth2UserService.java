@@ -1,9 +1,9 @@
-package com.example.community.config.auth;
+package com.example.community.googleConfig.auth;
 
-import com.example.community.config.auth.dto.OAuthAttributes;
-import com.example.community.config.auth.dto.SessionUser;
-import com.example.community.domain.entity.Member;
-import com.example.community.repository.MemberRepository;
+import com.example.community.googleConfig.auth.dto.OAuthAttributes;
+import com.example.community.googleConfig.auth.dto.SessionUser;
+import com.example.community.domain.entity.member.Member;
+import com.example.community.repository.member.MemberRepository;
 import java.util.Collections;
 import javax.servlet.http.HttpSession;
 import lombok.RequiredArgsConstructor;

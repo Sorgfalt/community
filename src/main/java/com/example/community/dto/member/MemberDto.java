@@ -1,7 +1,7 @@
-package com.example.community.dto;
+package com.example.community.dto.member;
 
-import com.example.community.domain.entity.Member;
-import com.example.community.domain.entity.Role;
+import com.example.community.domain.entity.member.Member;
+import com.example.community.domain.entity.member.Role;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;

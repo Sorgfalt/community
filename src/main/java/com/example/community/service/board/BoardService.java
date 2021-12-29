@@ -1,8 +1,8 @@
-package com.example.community.service;
+package com.example.community.service.board;
 
-import com.example.community.domain.entity.Board;
-import com.example.community.dto.BoardDto;
-import com.example.community.repository.BoardRepository;
+import com.example.community.domain.entity.board.Board;
+import com.example.community.dto.board.BoardDto;
+import com.example.community.repository.board.BoardRepository;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
