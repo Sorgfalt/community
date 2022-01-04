@@ -31,6 +31,8 @@ dependencies {
     implementation 'org.apache.tomcat.embed:tomcat-embed-jasper'
     implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
     implementation 'com.github.gavlyukovskiy:p6spy-spring-boot-starter:1.8.0'
+    implementation 'com.konghq:unirest-java:3.13.4'
+    implementation 'org.apache.commons:commons-lang3:3.12.0'
     implementation 'org.springframework.boot:spring-boot-starter-security'
     implementation 'org.springframework.boot:spring-boot-starter-oauth2-client:2.6.1'
     implementation 'org.springframework.security.oauth:spring-security-oauth2:2.3.4.RELEASE'

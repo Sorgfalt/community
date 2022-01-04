@@ -1,6 +1,5 @@
 package com.example.community.controller;
 
-import com.example.community.googleConfig.auth.dto.SessionUser;
 import com.example.community.dto.board.BoardDto;
 import com.example.community.service.board.BoardService;
 import java.util.List;
@@ -33,11 +32,11 @@ public class BoardController {
 		List<BoardDto> boardDtoList = boardService.getBoardList();
 		model.addAttribute("boardList",boardDtoList);
 
-    SessionUser member = (SessionUser) httpSession.getAttribute("member");
-
-    if (member != null){
-      model.addAttribute("userName", member.getName());
-    }
+//    SessionUser member = (SessionUser) httpSession.getAttribute("member");
+//
+//    if (member != null){
+//      model.addAttribute("userName", member.getName());
+//    }
 
 		return "board/list";
 	}

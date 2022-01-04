@@ -38,7 +38,7 @@ public class OauthToken {
     }
 
     @Data
-    public static class refreshToToken{
+    public static class refrashToken{
       private String refreshToken;
       private String grant_type;
 

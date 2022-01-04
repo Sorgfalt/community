@@ -50,6 +50,9 @@ spring:
       enabled: always
   main:
     allow-bean-definition-overriding: true
+  sql:
+    init:
+      mode: always
 logging:
   level:
     org:
